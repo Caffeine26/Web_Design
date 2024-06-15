@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List with SessionStorage</title>
+    <script src="https://kit.fontawesome.com/484e01476d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ex2.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="Header">
+            <h2>To-Do List with SessionStorage</h2>
+        </header>
+        <section class="input-Section">
+            <div class="input-box">
+                <div>
+                    <label for="title">Task Title</label>
+                    <input id="title" type="text" placeholder="Title" />
+                </div>
+                <div>
+                    <label for="assignee">Assignee</label>
+                    <input id="assignee" type="text" placeholder="John" />
+                </div>
+                <div>
+                    <label for="date">Deadline</label>
+                    <input id="date" type="date" />
+                </div>
+                <div class="btn-div">
+                    <button id="myBtn" class="btn-add">ADD</button>
+                </div>
+            </div>
+        </section>
+        <section id="myLists" class="list"></section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const listEle = document.getElementById("myLists");
+            let myTasks = JSON.parse(sessionStorage.getItem("Tasks")) || [];
+
+            class Employee {
+                constructor(title, assignee, date) {
+                    this.title = title;
+                    this.assignee = assignee;
+                    this.date = date;
+                }
+
+                static setToSessionStorage() {
+                    sessionStorage.setItem("Tasks", JSON.stringify(myTasks));
+                    renderTasksToHTML();
+                }
+
+                static removeFromStorage(index) {
+                    myTasks.splice(index, 1);
+                    Employee.setToSessionStorage();
+                }
+            }
+
+            function onClickAdd() {
+                const titleValue = document.getElementById("title").value.trim();
+                const assigneeValue = document.getElementById("assignee").value.trim();
+                const dateValue = formatDate(document.getElementById("date").value);
+
+                if (!titleValue || !assigneeValue || !dateValue) {
+                    console.log("Please fill in all fields!");
+                    return;
+                }
+
+                const newTask = new Employee(titleValue, assigneeValue, dateValue);
+                myTasks.push(newTask);
+                Employee.setToSessionStorage();
+
+                document.getElementById("title").value = "";
+                document.getElementById("assignee").value = "";
+                document.getElementById("date").value = "";
+            }
+
+            function renderTasksToHTML() {
+                listEle.innerHTML = myTasks.map((task, index) => `
+                    <div class="info" id="myInfo">
+                        <div class="template1 title">${task.title}</div>
+                        <div class="template2 assignee">${task.assignee}</div>
+                        <div class="template3 date">${task.date}</div>
+                        <button onclick="onClickDelete(${index})" class="btn-Delete">
+                            <i class="fas fa-trash fa-2xl"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            function onClickDelete(index) {
+                Employee.removeFromStorage(index);
+            }
+
+            function formatDate(dateString) {
+                if (!dateString) return "";
+                const dateParts = dateString.split("-");
+                return `${dateParts[1]}/${dateParts[2]}/${dateParts[0]}`;
+            }
+
+            renderTasksToHTML();
+
+            document.getElementById('myBtn').addEventListener('click', onClickAdd);
+        });
+    </script>
+</body>
+</html>

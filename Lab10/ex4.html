@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Chatroom</title>
+</head>
+<body class="flex justify-center m-10 bg-gray-300 overflow-hidden">
+
+    <!-- Top Section -->
+    <div class="w-[30rem] h-[43rem] rounded-2xl bg-white">
+        <div class="px-5 pt-5">
+            
+            <!-- 1st Line -->
+            <div class="inline-flex">
+                <span class="text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" /></svg>
+                </span>
+                <span class="px-5 font-bold">Conference Meeting</span>
+                <span class="bg-gray-300 rounded-2xl px-3 text-gray-600">4h left</span>
+                <span class="relative left-[3.5rem] z-30 bg-pink-300 rounded-3xl"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+                </span>
+                <span class="relative left-[3rem] z-20 bg-green-300 rounded-xl"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+                </span>
+                <span class="relative left-[2.5rem] z-10 bg-blue-300 rounded-xl"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+                </span>
+                <span class="relative left-[3rem] bg-gray-300 w-10 h-6 rounded-xl text-center">+8</span>
+            </div><br>
+
+            <!-- Time -->
+            <div class="flex">
+                <span class="text-4xl font-bold">6:00</span>
+                <span class="text-gray-400 mt-2 px-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+                </span>
+                <span class="text-4xl font-bold">7:00</span>
+                <div class="relative left-48 mt-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" /></svg>
+                </div>
+            </div>
+
+            <!-- Date -->
+            <div>
+                <span class="mr-11 ml-1 text-gray-500">Sat, Dec 11</span>
+                <span class="text-gray-500">Sat, Dec 11</span>
+            </div>
+        </div>
+
+        <!-- Break Line -->
+        <div class="inline-flex">
+            <hr class="border-2  border-black w-24"/>
+            <hr class="border-1 border-gray-400 w-96"/>
+        </div>
+
+        <!-- Body Section -->
+        <div class="pl-2">
+            <!-- Text 1 -->
+            <div class="flex">
+                <div class="bg-orange-100 w-52 rounded-lg rounded-br-none p-1 relative left-[14rem]"><span>It's an evening. Let's do that</span></div>
+                <div class="relative left-[15rem] mt-4 bg-orange-200 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                </div>
+            </div>
+    
+            <div class="flex justify-center text-gray-500 text-sm my-2">23:40</div>
+    
+            <!-- Text 2 & Logo -->
+            <div class="flex">
+                <div><span class="rounded-3xl ml-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+                </span></div>
+                <div class="flex">
+                    <div class="bg-gray-200 w-64 rounded-lg rounded-bl-none p-1 ml-2"><span>Where do we want to meet guys? I need to Know before</span></div>
+                </div>
+            </div>
+            <br>
+    
+            <!-- Text 3 -->
+            <div class="flex">
+                <div class="bg-orange-100 w-36 rounded-lg rounded-br-none p-1 relative left-[18rem]"><span>Hm ... Let me think</span></div>
+                <div class="relative left-[19rem] mt-4 bg-orange-200 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                </div>
+            </div>
+    
+            
+    
+            <!-- Text 4 -->
+            <div class="flex">
+                <div class="relative top-[6rem]"><span class="rounded-3xl ml-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+                </span></div>
+                <div class="bg-gray-200 w-64 rounded-lg rounded-bl-none p-2 ml-2 ">
+                    <div class="pt-1 pb-3">What do you want to eat?</div>
+                    <div class="bg-white p-1 my-1 rounded-lg flex items-center"><div class="w-3 h-3 rounded-full bg-gray-300 mr-2"></div>Pizza</div>
+                    <div class="bg-white p-1 rounded-lg flex items-center"><div class="w-3 h-3 rounded-full bg-gray-300 mr-2"></div>Burgers</div>
+                    <div>8 votes • to see the results</div>
+                </div>
+            </div>
+    
+            <!-- Logo & 3 Dots -->
+            <div class="flex">
+                <div class="mr-2"><span class="rounded-3xl ml-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+                </span></div>
+                <div class="flex relative top-[2.3rem]">
+                    <div class="w-2 h-2 rounded-full bg-gray-500 mr-2"></div>
+                    <div class="w-2 h-2 rounded-full bg-gray-400 mr-2"></div>
+                    <div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>
+                </div>
+                <div class="relative left-[8rem] mt-3 h-8 w-8 bg-white rounded-full drop-shadow-xl flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" /></svg>
+                </div>
+            </div>
+
+            <!-- Message Box -->
+            <div class="bg-gray-200 rounded-xl p-3 mr-2 mt-2">
+                <span class="text-gray-500">Message to Conference Meeting</span>
+                <!-- Icons -->
+                <div class="flex">
+                    <div class= "bg-white w-8 h-8 rounded-md mt-2 flex justify-center items-center text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                    </div>
+                    <div class="relative top-3 mx-5 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" /></svg>
+                    </div>
+                    <div class="relative top-3 text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" /></svg>
+                    </div>
+
+                    <!-- Send Now Button -->
+                    <div class="flex bg-black w-[8rem] pl-3 py-1 rounded-lg relative left-[12.2rem]">
+                        <span class="text-white">Send now</span>
+                        <span class="text-gray-500 mx-2">|</span>
+                        <div class="mx-1 my-[6px] text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>        
+    </div>
+
+    
+
+
+
+</body>
+</html>

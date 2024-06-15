@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Random Generate</title>
+    <style>
+        .btn1 {
+            height: 50px;
+            width: 150px;
+            border: 2px whitesmoke solid;
+            border-radius: 10px;
+            margin-top: 20px; 
+            margin-bottom: 20px;
+            margin-left: 15px;
+            font-size: 20px;
+
+        }
+        .btn2 {
+            height: 50px;
+            width: 120px;
+            border: 2px  whitesmoke solid;;
+            border-radius: 10px;
+            margin-top: 20px; 
+            margin-bottom: 20px;
+            margin-left: 9px;
+            font-size: 20px;
+
+           
+        }
+        .record {
+            background-color: aliceblue;
+            font-size: 20px;
+            color:black bold;
+            width: 390px;
+            height: 250px;
+            border-radius: 5px;
+            overflow-y: auto;
+            padding: 10px;
+            text-align: left; 
+        }
+        .heading {
+            font-size: 20px;
+            background-color:rgb(234, 225, 225);
+            width: 449px;
+            height: 35px;
+            margin-top: 20px;
+            padding-top:20px;
+        }
+        #colorBox {
+            background-color: rgb(210, 194, 226);
+            width: 390px;
+            height: 150px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: larger;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div align="center" style="background-color:  white; width: 500px; height: 800px; border: 5px solid black;">
+        <div align="start" class="heading">Color Random Generate</div>
+        <div style="background-color:pink; width: 449px; height: 700px; border: 1px solid  white;">
+            <div id="colorBox">
+                <h1>Background Color:</h1>
+            </div>
+            <button id="generateButton" class="btn1">Generate</button>
+            <button id="resetButton" class="btn2">Reset</button>
+            <div id="record" class="record">Record History</div>
+        </div>
+    </div>
+    <script>
+        class ColorGenerator {
+            constructor() {
+                this.colorBox = document.getElementById('colorBox');
+                this.generateButton = document.getElementById('generateButton');
+                this.generateButton.addEventListener('click', this.generate.bind(this));
+                this.resetButton = document.getElementById('resetButton');
+                this.resetButton.addEventListener('click', this.reset.bind(this));
+                this.record = document.getElementById('record');
+                this.serial = 1;
+            }
+
+            generate() {
+                let randomColor = this.getRandomColor();
+                this.colorBox.innerHTML = `<h1>Background Color: ${randomColor}</h1>`;
+                this.colorBox.style.backgroundColor = randomColor;
+                this.addToRecord(randomColor);
+            }
+
+            getRandomColor() {
+                let letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            addToRecord(color) {
+                let newItem = document.createElement('div');
+                newItem.textContent = `Color ${this.serial++}: ${color}`;
+                newItem.style.marginBottom = '5px'; 
+                this.record.appendChild(newItem);
+            }
+
+            reset() {
+                this.colorBox.innerHTML = `<h1>Background Color:</h1>`;
+                this.colorBox.style.backgroundColor = '';
+                this.record.innerHTML = 'Record'; 
+                this.serial = 1; 
+            }
+        }
+
+        const colorGenerator = new ColorGenerator();
+    </script>
+</body>
+</html>

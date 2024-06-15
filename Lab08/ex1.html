@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        .border-t {
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .m-1 {
+            position: absolute;
+            top: -30px; /* Adjust as needed */
+            padding-right: 80px;
+            width: 220px;
+            height: 90px;
+            margin-top: 3px;
+            transition: filter 0.3s ease;
+        }
+    
+    </style>
+</head>
+
+<body class="bg-blue-800">
+   
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-xl p-4">
+            <div class="flex items-center">
+                <img src="Profile.jpg" alt="Profile Picture" class="w-12 h-12 rounded-full">
+                <div class="ml-4">
+                    <div class="font-bold text-blue-800">SOR Sonit</div>  
+                    <div class="text-gray-500 text-sm">Today at 8:00 am</div>
+                </div>                    
+            </div>
+            <div class="mt-4">
+                <p>I want this mockup so bad!!</p>
+                <p>Found it at <a href="https://www.oliveandmango.com/dalgona-coffee-vs-greek-frappe/" class="text-blue-600">https://www.oliveandmango.com/dalgona-coffee-vs-greek-frappe/</a></p>
+                <p class="text-blue-600">See translation</p>
+            </div>
+            <div class="mt-4">
+                <img src="Post.jpg" alt="Mockup" class="w-full rounded-lg">
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                <button onclick="increaseLikeCount()" class="flex items-center text-gray-500">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
+                    </svg>
+                    <span id="likeCount">81</span>
+                    <span>Like</span>
+                </button>
+                <button class="text-gray-500">Comment</button>
+                <button class="text-gray-500">Share</button>
+            </div>
+            <div class="border-t">
+                
+                    <!-- Adjusted sizes and spacing for icons -->
+                    <img src="react emoji.png" alt="Like" class="m-1">
+                    
+                </div>
+                <div class="flex items-center mt-4 space-x-2">
+                    <img src="Profile.jpg" alt="Profile" class="w-10 h-10 rounded-full">
+                    <input type="text" class="border border-gray-300 text-gray-500 text-sm rounded-full flex-grow px-4 py-2" placeholder="Write something...">
+                    <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded-full">Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function increaseLikeCount() {
+            let likeCountElement = document.getElementById('likeCount');
+            let currentLikes = parseInt(likeCountElement.innerText);
+            let newLikes = currentLikes + 1;
+            likeCountElement.innerText = newLikes;
+        }
+    </script>
+</body>
+</html>

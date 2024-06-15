@@ -1,0 +1,55 @@
+.grid-container{
+    width: 510px;
+    display: grid;
+    border: 5px solid #000000;
+    padding: 5px;
+}
+
+.header{
+    margin-left: 5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hotpink;
+    color: white;
+    grid-column: 1 / -1;
+}  
+.scroll{
+    margin-top: 10px;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    grid-gap: 6px;
+    max-height: 400px;
+}
+.grid-item {
+    width: 90px;
+    height: 90px;
+    background-color: lightgreen;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    height: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(131, 131, 131); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(82, 82, 82); 
+  }

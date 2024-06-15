@@ -1,0 +1,45 @@
+.wrapper1{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(92, 116, 92);
+    padding: 0px;
+    border-radius: 0px;
+
+    position: relative;
+}
+.drop1{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.drop2{
+    position: absolute;
+    top: 0px;
+    left: 80px;
+}
+
+.wrapper2{
+    width: 250px;
+    height: 150px;
+    top: 20px;
+    background-color: rgb(181, 150, 181);
+    padding: 0px;
+    border-radius: 0px;
+
+    position: relative;
+}
+.drop3{
+    position: absolute;
+    top: 70px;
+    left: 50px;
+}
+.drop4{
+    position: absolute;
+    top: 70px;
+    left: 115px;
+}
+.drop5{
+    position: absolute;
+    top: 70px;
+    left: 175px;
+}

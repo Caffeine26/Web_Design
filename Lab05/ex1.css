@@ -1,0 +1,97 @@
+.container{
+    display:flex;
+    justify-content:end;
+    align-items: flex;
+    background-color: lightgrey;
+    flex-direction:column;
+    width:200px;
+    height:200px;
+    margin-bottom: 20px;
+    
+   
+}
+.child{
+    width:70px;
+    height:70px;
+    background-color:orange;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    position: absolute;
+   
+}
+
+
+.container1{
+    display:flex;
+    justify-content:end;
+    align-items: center;
+    background-color: lightgrey;
+    width:200px;
+    height:200px;
+    margin-bottom: 20px;
+   
+}
+.child1{
+    width:70px;
+    height:70px;
+    background-color:orange;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+
+}
+
+.container2{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: lightgrey;
+    width:200px;
+    height:200px;
+    margin-bottom: 20px;
+   
+   
+}
+.child2{
+    width:70px;
+    height:70px;
+    background-color:orange;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.container3{
+    position: relative;
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    background-color: lightgrey;
+    width:200px;
+    height:200px;
+    
+   
+   
+}
+.child3{
+    position: absolute;
+    width:70px;
+    height:70px;
+    top: 5px; /* Position at the top */
+    left:5px;
+    background-color:orange;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+

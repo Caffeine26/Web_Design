@@ -1,0 +1,126 @@
+.container{
+    width: 500px;
+    height: 320px;
+    background-color: black;
+    padding: 0px;
+
+    position: relative;
+
+}
+    .child1{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    translate: -100px -100px;
+
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    
+    /* Text alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+    .child2{
+        position: absolute;
+        top: 100px;
+        right: 400px;
+        translate: 800px -100px;
+
+        width: 400px;
+        height: 100px;
+        background-color: lime;
+
+        /* Text alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    }
+
+    .child3{
+        position: absolute;
+        bottom: 100px;
+        translate: -250px 200px;
+
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+
+        /* Text alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    }
+
+    .child4{
+
+        position: absolute;
+        bottom: 100px;
+        translate: 0px 220px;
+
+        width: 100px;
+        height: 120px;
+        background-color: goldenrod;
+
+        /* Text alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    }
+
+    .child5{
+
+        position: absolute;
+        bottom: 100px;
+        translate: 116px 100px;
+
+        width: 133px;
+        height: 220px;
+        background-color: greenyellow;
+
+        /* Text alignment */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        }
+
+    .child6{
+
+        position: absolute;
+        bottom: 100px;
+        translate: 133px 100px;
+
+        width: 134px;
+        height: 220px;
+        background-color: blueviolet;
+
+        /* Text alignment */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        }
+
+    .child7{
+
+        position: absolute;
+        bottom: 100px;
+        translate: 133px 100px;
+
+        width: 134px;
+        height: 220px;
+        background-color: blue;
+
+        /* Text alignment */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        }

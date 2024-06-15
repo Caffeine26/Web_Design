@@ -1,0 +1,162 @@
+.wrapper{
+    width: 200px;
+    height: 200px;
+    background-color: silver;
+    padding: 5;
+
+    position: relative;
+}
+
+.child{
+    position: absolute;
+    top:130px;
+    left: 135px;
+    translate: -100px -100px;
+
+    width: 125px;
+    height: 30px;
+    background-color: pink;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child1{
+
+    position: absolute;
+    top:130px;
+    left: 183px;
+    translate: -100px -100px;
+
+    width: 30px;
+    height: 125px;
+    background-color: pink;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child2{
+
+    position: absolute;
+    top:240px;
+    left: 135px;
+    translate: -100px -100px;
+
+    width: 125px;
+    height: 30px;
+    background-color: pink;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper1{
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+    translate: 220px -200px;
+    padding: 5;
+
+    position: relative;
+}
+
+.child3{
+    position: absolute;
+    top:130px;
+    left: 135px;
+    translate: -100px -100px;
+
+    width: 125px;
+    height: 30px;
+    background-color: pink;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child4{
+
+    position: absolute;
+    top:130px;
+    left: 183px;
+    translate: -100px -100px;
+
+    width: 30px;
+    height: 125px;
+    background-color: pink;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper2{
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+    translate: 0px -180px;
+    padding: 5;
+    left: 115px;
+
+    position: relative;
+}
+
+.child5{
+    position: absolute;
+    top:130px;
+    left: 135px;
+    translate: -100px -100px;
+
+    width: 125px;
+    height: 30px;
+    background-color: pink;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child6{
+
+    position: absolute;
+    top:130px;
+    left: 135px;
+    translate: -100px -100px;
+
+    width: 30px;
+    height: 125px;
+    background-color:pink;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child7{
+
+    position: absolute;
+    top:240px;
+    left: 135px;
+    translate: -100px -100px;
+
+    width: 125px;
+    height: 30px;
+    background-color: pink;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

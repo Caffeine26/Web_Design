@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/484e01476d.js"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ex1.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="Header">
+        <h2>To-do List with LocalStorage</h2>
+      </div>
+      <div class="input-Section">
+        <div class="input-box">
+          <div>
+            <div>Task Title</div>
+            <input id="title" type="text" placeholder="Title" />
+          </div>
+          <div>
+            <div>Assignee</div>
+            <input id="assignee" type="text" placeholder="John" />
+          </div>
+          <div>
+            <div>Deadline</div>
+            <input id="date" type="date" />
+          </div>
+          <div class="btn-div">
+            <button onclick="OnclickAdd()" id="myBtn" class="btn-add">
+              ADD
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="myLists" class="list"></div>
+    </div>
+
+    <script>
+      let listEle = document.getElementById("myLists");
+
+      let myTasks = [];
+      let myLocalTasks = localStorage.getItem("Tasks");
+      if (myLocalTasks) {
+        myTasks = JSON.parse(myLocalTasks);
+      }
+      class Employee {
+        constructor(title, assignee, date) {
+          this.title = title;
+          this.assignee = assignee;
+          this.date = date;
+        }
+
+        static setToLocalStorage() {
+          renderTasksToHTML();
+          localStorage.setItem("Tasks", JSON.stringify(myTasks));
+        }
+
+        static removeFromStorage(key, index) {
+          myTasks.splice(index, 1);
+          Employee.setToLocalStorage();
+        }
+      }
+
+      let deleteBtn = document.getElementById("btn_delete");
+
+      function onClickDelete(index) {
+        Employee.removeFromStorage("Tasks", index);
+      }
+      function OnclickAdd() {
+        let titleValue = document.getElementById("title").value;
+        let assigneeValue = document.getElementById("assignee").value;
+
+        let dateValue = formatDate(document.getElementById("date").value);
+
+        if (!(titleValue && assigneeValue && dateValue)) {
+          console.log("You input nothing!");
+        } else {
+          let emp = new Employee(titleValue, assigneeValue, dateValue);
+
+          myTasks.push(emp);
+          Employee.setToLocalStorage();
+        }
+
+        document.getElementById("title").value = "";
+        document.getElementById("assignee").value = "";
+        document.getElementById("date").value = "";
+      }
+
+      function renderTasksToHTML() {
+        let contentHTML = "";
+        for (let j = 0; j < myTasks.length; j++) {
+          console.log(myTasks[j].title);
+
+          contentHTML += `
+             <div id = "myInfo" class="info">
+            <div class="template1 title">${myTasks[j].title}</div>
+            <div class="template2 Assignee">${myTasks[j].assignee}</div>
+            <div class="template3 date">${myTasks[j].date}</div>
+            <button onclick = "onClickDelete(${j})" class="btn-Delete">
+              <i class="fas fa-trash fa-2xl"></i>
+            </button>
+          </div>
+          `;
+        }
+
+        listEle.innerHTML = contentHTML;
+        console.log("You are ready to go>>");
+      }
+
+      function formatDate(dateString) {
+        let dateParts = dateString.split("-");
+        // Rearrange and format
+        return `${dateParts[1]}/${dateParts[2]}/${dateParts[0]}`;
+      }
+
+      renderTasksToHTML();
+    </script>
+  </body>
+</html>

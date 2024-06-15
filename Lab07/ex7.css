@@ -1,0 +1,12 @@
+.wrapper {
+    width: clamp(700px, 100%, 800px);
+    margin: 0 auto; /* Center the wrapper horizontally */
+    background-color: lightblue; /* Just for visualization */
+}
+
+/* Additional styles for the content if needed */
+.content {
+    padding: 20px;
+    text-align: center;
+    height: 500px;
+}

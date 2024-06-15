@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="h-screen flex overflow-hidden">
+        <!-- Sidebar -->
+        <div class="flex flex-col w-64 bg-white border-r">
+            <div class="flex items-center justify-center h-16 bg-blue-600 text-white">
+                <i class="ri-messenger-fill text-3xl mr-1"></i>
+                <h1 class="text-lg font-semibold">Messenger</h1>
+            </div>
+            <div class="flex-1 overflow-y-auto">
+                <nav class="flex flex-col py-4 px-3">
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-xl">
+                        <i class="ri-dashboard-line w-5 h-5"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-xl">
+                        <i class="ri-line-chart-line w-5 h-5"></i>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-xl">
+                        <i class="ri-folder-3-line h-5 w-5"></i>
+                        <span>Files</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-xl">
+                        <i class="ri-phone-line h-5 w-5"></i>
+                        <span>Call</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-white bg-blue-600 rounded-xl">
+                        <i class="ri-chat-3-line h-5 w-5"></i>
+                        <span>Messages</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-xl">
+                        <i class="ri-team-line w-5 h-5"></i>
+                        <span>Community</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-xl">
+                        <i class="ri-settings-2-line w-5 h-5"></i>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex items-center justify-start h-16 border-t ml-3">
+                <img class="w-12 h-12 rounded-full mr-3" src="https://picsum.photos/id/128/200/300" alt="">
+                <div class="flex flex-col">
+                    <span class="text-gray-700">Sonit Sor</span>
+                    <button class="text-red-500">Logout</button>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="flex flex-col flex-1">
+            <div class="flex-1 flex overflow-hidden">
+                <!-- Messages List -->
+                <div class="w-1/3 border-r overflow-y-auto">
+                    <div class="p-3">
+                        <div class="flex items-center justify-between p-4 border-b">
+                            <div>
+                                <h2 class="text-xl font-semibold">Messages</h2>
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="bg-gray-200 w-8 h-8 rounded-full flex justify-center items-center mr-1">
+                                    <i class="ri-edit-2-line"></i>
+                                </div>
+                                <div class="bg-gray-200 w-8 h-8 rounded-full flex justify-center items-center ml-1">
+                                    <i class="ri-search-2-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4 mt-3">
+                            <div class="text-xs flex text-gray-500">
+                                <i class="ri-map-pin-2-fill"></i>
+                                <div class="ml-1 ">Pinned Messages</div>
+                            </div>
+                            <div class="flex items-center p-4 bg-blue-100 rounded-lg justify-between">
+                                <div class="flex flex-row">
+                                    <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/29/200/300" alt="Profile">
+                                    <div>
+                                        <div class="font-bold">My CC</div>
+                                        <div class="text-sm text-gray-600">Hey are you free tonight.....</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="text-xs mb-1 text-gray-500">12:30 PM</div>
+                                    <div class="flex justify-end">
+                                        <div class="text-xs bg-red-500 rounded-full w-4 h-4 flex justify-center text-white">8</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-4  rounded-lg justify-between">
+                                <div class="flex flex-row">
+                                    <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/12/200/300" alt="Profile">
+                                    <div>
+                                        <div class="font-bold">Rompher</div>
+                                        <div class="text-sm text-gray-600">do you bring lauch there?</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="text-xs mb-1 text-gray-500">08:59 am</div>
+                                    <div class="flex justify-end">
+                                        <i class="ri-check-double-line text-green-500"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-4  rounded-lg justify-between">
+                                <div class="flex flex-row">
+                                    <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/129/200/300" alt="Profile">
+                                    <div>
+                                        <div class="font-bold">Sivhour</div>
+                                        <div class="text-sm text-gray-600">Want noumpao???</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="text-xs mb-1 text-gray-500">9: 10 am</div>
+                                    <div class="flex justify-end">
+                                        <div class="text-xs bg-red-500 rounded-full w-4 h-4 flex justify-center text-white">1</div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-xs flex text-gray-500">
+                                <i class="ri-message-2-fill"></i>
+                                <div class="ml-1 ">All Messages</div>
+                            </div>
+                            <div class="flex items-center p-4  rounded-lg justify-between">
+                                <div class="flex flex-row">
+                                    <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/121/200/300" alt="Profile">
+                                    <div>
+                                        <div class="font-bold">Jiheng</div>
+                                        <div class="text-sm text-teal-400">you go school yet?....</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="text-xs mb-1 text-gray-500">7:00 am</div>
+                                    <div class="flex justify-end">
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-4  rounded-lg justify-between">
+                                <div class="flex flex-row">
+                                    <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/1000/200/300" alt="Profile">
+                                    <div>
+                                        <div class="font-bold">Sor thanaoth</div>
+                                        <div class="text-sm text-gray-600">eat lanch together</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="text-xs mb-1 text-gray-500">8: 10 am</div>
+                                    <div class="flex justify-end">
+                                        <div class="text-xs bg-red-500 rounded-full w-4 h-4 flex justify-center text-white">1</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-4  rounded-lg justify-between">
+                                <div class="flex flex-row">
+                                    <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/600/200/300" alt="Profile">
+                                    <div>
+                                        <div class="font-bold">srey roth</div>
+                                        <div class="text-sm text-gray-600">toos</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="text-xs mb-1 text-gray-500">05:11 PM</div>
+                                    <div class="flex justify-end">
+                                        <div class="text-xs bg-red-500 rounded-full w-4 h-4 flex justify-center text-white">2</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="flex-1 flex flex-col">
+                    <div class="flex items-center justify-between p-4 border-b">
+                        
+                        <div class="flex items-center">
+                            <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/29/200/300" alt="Profile">
+                            <div>
+                                <div class="font-bold">My CC</div>
+                                <div class="text-sm text-gray-600">is typing....</div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button>
+                                <i class="ri-video-on-line"></i>
+                            </button>
+                            <button>
+                                <i class="ri-phone-line"></i>
+                            </button>
+                            <button>
+                                <i class="ri-more-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-1 p-4 overflow-y-auto">
+                        <div class="space-y-4">
+                            <div class="flex justify-center text-xs">
+                                <p class="bg-gray-200 rounded-xl px-2 py-1">Today, June 30</p>
+                            </div>
+                            <div class="flex items-start">
+                                <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/29/200/300" alt="Profile">
+                                <div>
+                                    <div class="flex justify-between">
+                                        <div class=" font-semibold ">Mas happy</div>
+                                        <div class="text-sm text-gray-600">8:90 PM</div>
+                                    </div>
+                                    <div class="bg-gray-200 p-3 rounded-lg">Hungry</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/29/200/300" alt="Profile">
+                                <div>
+                                    <div class="text-sm text-gray-600">5:00 PM</div>
+                                    <div class="bg-gray-200 p-3 rounded-lg">but not done yet</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/29/200/300" alt="Profile">
+                                <div>
+                                    <div class="text-sm text-gray-600">5:01 PM</div>
+                                    <div class="bg-gray-200 p-3 rounded-lg">How to find the pic???</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div>
+                                    <div class="text-sm text-gray-600 text-right">5:02 PM</div>
+                                    <div class="bg-blue-500 text-white p-3 rounded-lg">Go to chrome and search</div>
+                                </div>
+                                <div>
+                                    <img class="w-10 h-10 rounded-full ml-3" src="https://picsum.photos/id/128/200/300" alt="">
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <img class="w-10 h-10 rounded-full mr-3" src="https://picsum.photos/id/29/200/300" alt="Profile">
+                                <div>
+                                    <div class="text-sm text-gray-600">6:00 PM</div>
+                                    <div class="bg-gray-200 p-3 rounded-lg mb-2">
+                                        <div>@pherpher @sor @jiheng</div>
+                                    </div>
+                                    <div class="bg-gray-200 p-3 rounded-lg">
+
+                                        <div>Is it correct right to find the pic</div>
+                                        <a href="#" class="text-blue-500">https://picsum.photos/</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div>
+                                    <div class="text-sm text-gray-600 text-right">5:12 PM</div>
+                                    <div class="bg-blue-500 text-white p-3 rounded-lg">yes correctly!!!!</div>
+                                </div>
+                                <div>
+                                    <img class="w-10 h-10 rounded-full ml-3" src="https://picsum.photos/id/128/200/300" alt="">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 border-t">
+                        <input type="text" class="flex-1 border rounded-lg p-2 mr-2" placeholder="Type a message">
+                        <button class="p-2 rounded-lg bg-blue-500 text-white">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

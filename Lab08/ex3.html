@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Responsive Menu</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .menu-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .menu-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .menu-button {
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-button:hover {
+            background-color: #e2e2e2;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item-content {
+            padding: 16px;
+        }
+
+        .menu-item-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .menu-item-price {
+            font-size: 16px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .menu-items {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="menu-title">OUR Menu</h1>
+        <div class="menu-buttons">
+            <a href="#" class="menu-button">All</a>
+            <a href="#" class="menu-button">Breakfast</a>
+            <a href="#" class="menu-button">Lunch</a>
+            <a href="#" class="menu-button">Shakes</a>
+            <a href="#" class="menu-button">Dinner</a>
+        </div>
+        <div class="menu-items">
+            <!-- Example Menu Items (Replace with your content) -->
+            <div class="menu-item">
+                <img src="eggs benedict.jpg" alt="Breakfast" />
+                <div class="menu-item-content">
+                    <div class="menu-item-name">Eggs Benedict</div>
+                    <div class="menu-item-description">never say no to break fast   </div>          
+                    <div class="menu-item-price"><h3>$10.99</h3></div>
+                </div> 
+            </div>
+            <div class="menu-item">
+                <img src="caesar salade.jpg" alt="Lunch" />
+                <div class="menu-item-content">
+                    <div class="menu-item-name">Caesar Salad</div>
+                    <div class="menu-item-description">It's contain a very heigh protein</div>
+                    <div class="menu-item-price"><h3>$8.99</h3></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="chocolate shake.jpg" alt="Shakes" />
+                <div class="menu-item-content">
+                    <div class="menu-item-name">Chocolate Shake</div>
+                    <div class="menu-item-description">The taste is so natural and fresh. it's a signature drink from our shop</div>
+                    <div class="menu-item-price"><h3>$5.99</h3></div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="grilled salmon.jpg" alt="Dinner" />
+                <div class="menu-item-content">
+                    <div class="menu-item-name">Grilled Salmon</div>
+                    <div class="menu-item-description">salmon export directly form japan, Ingredients are onion avocado tomato salmon......</div>
+                    <div class="menu-item-price"><h3>$15.99</h3></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

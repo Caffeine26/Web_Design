@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    
+    <div class="h-screen justify-center align-middle">
+        <div class="max-w-lg m-auto">
+
+            <div class=" flex flex-col text-center mt-20">
+                <h1 class="text-2xl font-bold font-sans tracking-widest text-slate-600">About</h1>
+                <p> This will be describe how my personality look like after 3 years.  </p>
+            </div>
+
+            <div class=" flex justify-center mt-10">
+                <img class="rounded-lg size-fit h-350 " src="sea.jpg" alt="">
+            </div>
+
+            <div class="flex text-center justify-evenly text-xl font-semibold font-sans tracking-widest text-slate-600 mt-3 bg-gray-200 rounded-t-lg">
+                <div id="history-section" class="rounded-tl-lg flex-grow p-4 cursor-pointer">History</div>
+                <div id="vision-section" class="flex-grow p-4 cursor-pointer">Vision</div>
+                <div id="goals-section" class="rounded-tr-lg flex-grow p-4 cursor-pointer">Goals</div> 
+            </div>
+
+            <div id="history-content" class=" bg-white p-3 rounded-b-lg hidden">
+                <p> I was very humble and happy sometime kind, being an extrovert girl who is very positive to other and nice to them but......</p>
+            </div>
+            <div id="vision-content" class=" bg-white p-3 rounded-b-lg hidden">
+                <p>A ALl of my dream is about to make more money and make my mon prond of having me as her daugther </p>
+            </div>
+            <div id="goals-content" class=" bg-white p-3 rounded-b-lg hidden">
+                <p> MAking and building a small family is my dream on the futer if i could. i wish i could have a small with house which surrounded by the gaden, if i have my own house i can raise the many cat, dog and alsso other pets.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let historyBtn = document.getElementById("history-section");
+        let visionBtn = document.getElementById("vision-section");
+        let goalsBtn = document.getElementById("goals-section");
+
+        let historyContent = document.getElementById("history-content");
+        let visionContent = document.getElementById("vision-content");
+        let goalsContent = document.getElementById("goals-content");
+
+        let focus = "";
+
+        historyBtn.onclick = () => {
+            resetBtnColor();
+            hideAllContent();
+            if (focus == historyBtn.id) {
+                focus = "";
+                return;
+            }
+            focus = historyBtn.id;
+            historyBtn.style.backgroundColor = "white";
+            historyContent.style.display = "block";
+        }
+
+        visionBtn.onclick = () => {
+            resetBtnColor();
+            hideAllContent();
+            if (focus == visionBtn.id) {
+                focus = "";
+                return;
+            }
+            focus = visionBtn.id;
+            visionBtn.style.backgroundColor = "white";
+            visionContent.style.display = "block";
+        }
+
+        goalsBtn.onclick = () => {
+            resetBtnColor();
+            hideAllContent();
+            if (focus == goalsBtn.id) {
+                focus = "";
+                return;
+            }
+            focus = goalsBtn.id;
+            goalsBtn.style.backgroundColor = "white";
+            goalsContent.style.display = "block";
+        }
+
+        function btnAction(button, content) {
+            resetBtnColor();
+            hideAllContent();
+            if (focus == button.id) {
+                focus = "";
+                return;
+            }
+            focus = goalsBtn.id;
+            button.style.backgroundColor = "white";
+            content.style.display = "block";
+        }
+
+
+        function hideAllContent() {
+            historyContent.style.display = "none";
+            visionContent.style.display = "none"
+            goalsContent.style.display = "none"
+        }
+
+        function resetBtnColor() {
+            historyBtn.style.backgroundColor = "rgb(229 231 235)";
+            visionBtn.style.backgroundColor = "rgb(229 231 235)";
+            goalsBtn.style.backgroundColor = "rgb(229 231 235)";
+        }
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List with Cookies</title>
+    <script src="https://kit.fontawesome.com/484e01476d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ex3.css">
+</head>
+<body>
+    <div class="container">
+        <header class="Header">
+            <h2>To-Do List with Cookies</h2>
+        </header>
+        <section class="input-Section">
+            <div class="input-box">
+                <div>
+                    <label for="key">Key</label>
+                    <input id="key" type="text" placeholder="Key">
+                </div>
+                <div>
+                    <label for="value">Value</label>
+                    <input id="value" type="text" placeholder="Value">
+                </div>
+                <div>
+                    <label for="date">Deadline</label>
+                    <input id="date" type="date">
+                </div>
+                
+                <div class="btn-div">
+                    <button id="myBtn" class="btn-add">ADD</button>
+                </div>
+            </div>
+        </section>
+        <section id="myLists" class="list"></section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const listEle = document.getElementById("myLists");
+            let myTasks = getTasksFromCookies();
+
+            class Task {
+                constructor(key, value, deadline, ) {
+                    this.key = key;
+                    this.value = value;
+                    this.deadline = deadline;
+                    
+                }
+            }
+
+            function onClickAdd() {
+                const keyValue = document.getElementById("key").value.trim();
+                const valueValue = document.getElementById("value").value.trim();
+                const dateValue = document.getElementById("date").value;
+                
+
+                if (!keyValue || !valueValue || !dateValue ) {
+                    alert("Please fill in all fields!");
+                    return;
+                }
+
+                const newTask = new Task(keyValue, valueValue, dateValue);
+                myTasks.push(newTask);
+                updateCookies();
+                renderTasksToHTML();
+                clearInputFields();
+            }
+
+            function renderTasksToHTML() {
+                listEle.innerHTML = myTasks.map((task, index) => `
+                    <div class="info">
+                        <div class="template1 key">${task.key}</div>
+                        <div class="template2 value">${task.value}</div>
+                        <div class="template3 deadline">${task.deadline}</div>
+                        <div class="template4 expiration-date">
+                            <input type="date" id="expirationDate_${index}" value="${task.expirationDate}">
+                            <button onclick="onClickModifyExpiration(${index})">Modify Expiration</button>
+                        </div>
+                        <button onclick="onClickDelete(${index})" class="btn-Delete">
+                            <i class="fas fa-trash fa-2xl"></i>
+                        </button>
+                    </div>
+                `).join('');
+
+                addDeleteEventListeners();
+            }
+
+            function addDeleteEventListeners() {
+                const deleteButtons = document.querySelectorAll('.btn-Delete');
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const index = button.parentElement.getAttribute('data-index');
+                        myTasks.splice(index, 1);
+                        updateCookies();
+                        renderTasksToHTML();
+                    });
+                });
+            }
+
+            function updateCookies() {
+                document.cookie = `tasks=${JSON.stringify(myTasks)}; expires=${getCookieExpirationDate()}; path=/`;
+            }
+
+            function getTasksFromCookies() {
+                const cookies = document.cookie.split('; ');
+                for (const cookie of cookies) {
+                    const [name, value] = cookie.split('=');
+                    if (name === 'tasks') {
+                        return JSON.parse(decodeURIComponent(value));
+                    }
+                }
+                return [];
+            }
+
+            function getCookieExpirationDate() {
+                const date = new Date();
+                date.setDate(date.getDate() + 7); // Expires in 7 days
+                return date.toUTCString();
+            }
+
+            function clearInputFields() {
+                document.getElementById("key").value = "";
+                document.getElementById("value").value = "";
+                document.getElementById("date").value = "";
+                
+            }
+
+            function onClickDelete(index) {
+                myTasks.splice(index, 1);
+                updateCookies();
+                renderTasksToHTML();
+            }
+
+            function onClickModifyExpiration(index) {
+                const newExpirationDate = document.getElementById(`expirationDate_${index}`).value;
+                myTasks[index].expirationDate = newExpirationDate;
+                updateCookies();
+                renderTasksToHTML();
+            }
+
+            renderTasksToHTML();
+
+            document.getElementById('myBtn').addEventListener('click', onClickAdd);
+        });
+    </script>
+</body>
+</html>

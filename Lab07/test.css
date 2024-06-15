@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px; /* Adjust maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content {
+    overflow-y: auto; /* Enable vertical scroll */
+    max-height: 300px; /* Limit maximum height for vertical scroll */
+}
+
+.vertical-scroll {
+    padding: 10px;
+}
+
+/* Optional: Style for paragraphs */
+p {
+    margin-bottom: 10px;
+}
+
